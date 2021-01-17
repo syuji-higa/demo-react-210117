@@ -29,7 +29,7 @@ type ResponseErrro = any
 
 function App() {
   
-  const { data, error, isValidating } = useSWR<GetUserResponse, ResponseErrro>('/user', fetcher)
+  const { data, error, isValidating, mutate } = useSWR<GetUserResponse, ResponseErrro>('/user', fetcher)
 
   return (
     <div className="App">
@@ -39,17 +39,22 @@ function App() {
         <p>Error（Retry after 5 seconds）</p>
       ) : (
         // NOTE: データ取得成功時の表示
-        <ul className="App-user-list">
-          {
-            data?.map(({ id, name, age }) => {
-              return (
-                <li key={id} className="App-user-list-item">
-                  <UserListItem id={id} name={name} age={age} />
-                </li>
-              )
-            })
-          }
-        </ul>
+        <>
+          {/* 更新ボタン */}
+          <button type="button" onClick={() => mutate(data)}>Revalidate</button>
+          {/* ユーザデータ一覧 */}
+          <ul className="App-user-list">
+            {
+              data?.map(({ id, name, age }) => {
+                return (
+                  <li key={id} className="App-user-list-item">
+                    <UserListItem id={id} name={name} age={age} />
+                  </li>
+                )
+              })
+            }
+          </ul>
+        </>
       )}
       {/* NOTE: データ取得中の表示 */}
       {/* TODO: スケルトンスクリーンに差し替え */}
