@@ -1,0 +1,17 @@
+required:
+- name
+type: object
+properties:
+  id:
+    type: integer
+    format: int64
+    minimum: 1
+    readOnly: true
+  name:
+    type: string
+    x-faker: name.firstName
+  age:
+    type: integer
+    format: int32
+    minimum: 0
+    maximum: 255

@@ -1,0 +1,51 @@
+get:
+  tags:
+  - user
+  summary: Find pet
+  description: Returns a single user
+  operationId: getUser
+  responses:
+    200:
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ../components/schemas/User.yml
+    400:
+      description: Invalid request
+      content: {}
+  security:
+  - example_auth:
+    - read:users
+post:
+  tags:
+  - user
+  summary: Add a new user to the example
+  operationId: addUser
+  requestBody:
+    description: User object that needs to be added to the example
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/User.yml
+    required: true
+  responses:
+    201:
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/User.yml
+    400:
+      description: Invalid request
+      content: {}
+    405:
+      description: Invalid input
+      content: {}
+  security:
+  - example_auth:
+    - write:users
+    - read:users
+  x-codegen-request-body-name: body
