@@ -21,7 +21,7 @@ export interface operations {
     responses: {
       /** successful operation */
       200: {
-        "application/json": { [key: string]: any }[];
+        "application/json": components["schemas"]["user"][];
       };
       /** Invalid request */
       400: unknown;
@@ -29,12 +29,12 @@ export interface operations {
   };
   addUser: {
     requestBody: {
-      "application/json": { [key: string]: any };
+      "application/json": components["schemas"]["user"];
     };
     responses: {
       /** successful operation */
       201: {
-        "application/json": { [key: string]: any };
+        "application/json": components["schemas"]["user"];
       };
       /** Invalid request */
       400: unknown;
@@ -53,7 +53,7 @@ export interface operations {
     responses: {
       /** successful operation */
       200: {
-        "application/json": { [key: string]: any };
+        "application/json": components["schemas"]["user"];
       };
       /** Invalid ID supplied */
       400: unknown;
@@ -69,12 +69,12 @@ export interface operations {
       };
     };
     requestBody: {
-      "application/json": { [key: string]: any };
+      "application/json": components["schemas"]["user"];
     };
     responses: {
       /** successful operation */
       200: {
-        "application/json": { [key: string]: any };
+        "application/json": components["schemas"]["user"];
       };
       /** Invalid ID supplied */
       400: unknown;

@@ -12,7 +12,7 @@ get:
           schema:
             type: array
             items:
-              $ref: #/components/schemas/User
+              $ref: ../components/schemas/User.yml
     400:
       description: Invalid request
       content: {}
@@ -29,7 +29,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: #/components/schemas/User
+          $ref: ../components/schemas/User.yml
     required: true
   responses:
     201:
@@ -37,7 +37,7 @@ post:
       content:
         application/json:
           schema:
-            $ref: #/components/schemas/User
+            $ref: ../components/schemas/User.yml
     400:
       description: Invalid request
       content: {}
