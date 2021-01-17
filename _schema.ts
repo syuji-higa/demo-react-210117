@@ -21,7 +21,7 @@ export interface operations {
     responses: {
       /** successful operation */
       200: {
-        "application/json": components["schemas"]["user"][];
+        "application/json": { [key: string]: any }[];
       };
       /** Invalid request */
       400: unknown;

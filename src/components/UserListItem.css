@@ -1,0 +1,7 @@
+.UserListItem-item {
+  display: flex;
+}
+
+.UserListItem-item-desc {
+  margin-left: 10px;
+}

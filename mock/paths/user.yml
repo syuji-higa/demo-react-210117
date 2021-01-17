@@ -12,7 +12,7 @@ get:
           schema:
             type: array
             items:
-              $ref: ../components/schemas/User.yml
+              $ref: #/components/schemas/User
     400:
       description: Invalid request
       content: {}
