@@ -1,4 +1,5 @@
 import './UserListItem.css';
+// NOTE: mock から生成したスキーマを取得
 import { components } from '../../_schema';
 
 type Props = components['schemas']['user']
