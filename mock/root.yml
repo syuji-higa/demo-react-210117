@@ -26,3 +26,7 @@ paths:
     $ref: ./paths/user.yml
   /user/{userId}:
     $ref: ./paths/user-by-id.yml
+components:
+  schemas:
+    user:
+      $ref: './components/schemas/User.yml'

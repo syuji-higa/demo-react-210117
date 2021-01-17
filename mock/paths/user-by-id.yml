@@ -18,7 +18,7 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/User.yml
+            $ref: #/components/schemas/User
     400:
       description: Invalid ID supplied
       content: {}
@@ -46,7 +46,7 @@ patch:
     content:
       application/json:
         schema:
-          $ref: ../components/schemas/User.yml
+          $ref: #/components/schemas/User
     required: true
   responses:
     200:
@@ -54,7 +54,7 @@ patch:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/User.yml
+            $ref: #/components/schemas/User
     400:
       description: Invalid ID supplied
       content: {}
