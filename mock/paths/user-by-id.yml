@@ -25,9 +25,6 @@ get:
     404:
       description: User not found
       content: {}
-  security:
-  - example_auth:
-    - read:users
 patch:
   tags:
   - user
@@ -64,14 +61,10 @@ patch:
     405:
       description: Validation exception
       content: {}
-  security:
-  - example_auth:
-    - write:users
-    - read:users
   x-codegen-request-body-name: body
 delete:
   tags:
-  - uesr
+  - user
   summary: Deletes a user
   operationId: deleteUser
   parameters:
@@ -92,8 +85,4 @@ delete:
     404:
       description: User not found
       content: {}
-  security:
-  - example_auth:
-    - write:users
-    - read:users
   x-codegen-request-body-name: body

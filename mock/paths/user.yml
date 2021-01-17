@@ -16,9 +16,6 @@ get:
     400:
       description: Invalid request
       content: {}
-  security:
-  - example_auth:
-    - read:users
 post:
   tags:
   - user
@@ -44,8 +41,4 @@ post:
     405:
       description: Invalid input
       content: {}
-  security:
-  - example_auth:
-    - write:users
-    - read:users
   x-codegen-request-body-name: body
