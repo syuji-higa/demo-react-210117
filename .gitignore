@@ -14,6 +14,9 @@
 # eslint cache
 .eslintcache
 
+# mock bundle spce
+mock/_bundle.yml
+
 # misc
 .DS_Store
 .env.local

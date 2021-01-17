@@ -21,7 +21,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "mock": "prism mock -d mock/root.yml"
+    "mock": "prism mock -d mock/root.yml",
+    "schema:bundle": "npx swagger-cli bundle -o mock/_bundle.yml -t yaml mock/root.yml",
+    "schema:create": "npx openapi-typescript mock/_bundle.yml --output _schema.ts",
+    "schema": "yarn schema:bundle && yarn schema:create"
   },
   "eslintConfig": {
     "extends": [
