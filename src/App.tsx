@@ -13,12 +13,16 @@ const API_BASE_URL = 'http://127.0.0.1:4010'
 //   SSR するなら isomorphic-fetch
 //   両方なら isomorphic-unfetch
 //   を使う
-const fetcher = (path: keyof paths) => fetch(API_BASE_URL + path).then(r => {
-  // TODO:
-  //   - API 側のレスポンスボディを設定
-  //   - エラー時のハンドリング（レスポンスの整形など）をする
-  //     ※SWR との組み合わせは要調査
-  return r.json()
+const fetcher = (path: keyof paths) => fetch(API_BASE_URL + path).then(res => {
+  // TODO: エラー時の API 側のレスポンスボディを設定
+  if(!res.ok) {
+    // TODO: エラー時のレスポンスの整形などをする（catch 側も）
+    throw new Error()
+  }
+  return res.json()
+}).catch((err) => {
+  // NOTE: ネットワークエラーは直接 catch される
+  throw new Error(err)
 })
 
 // TODO: 別のファイルにまとめて定義
