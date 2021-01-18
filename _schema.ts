@@ -105,7 +105,7 @@ export interface operations {
 export interface components {
   schemas: {
     user: {
-      id?: number;
+      id: number;
       name: string;
       age?: number;
     };
